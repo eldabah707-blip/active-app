@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل واتساب GB الاحترافي | ضد الحظر</title>
+    <style>
+        /* تنسيق الخلفية والألوان العامة */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #111b21 0%, #222e35 100%);
+            color: #e9edef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* كارت الصفحة الرئيسي */
+        .card {
+            background-color: #2a3942;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 30px;
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* تنسيق الصورة */
+        .app-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #00a884; /* لون الواتساب الشهير */
+        }
+
+        p {
+            font-size: 16px;
+            color: #8696a0;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* الزرار الاحترافي */
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #00a884;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 168, 132, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #008f72;
+            transform: translateY(-2px);
+        }
+
+        /* لون الزرار في الضغطة الثانية */
+        .btn.second {
+            background-color: #34b7f1;
+            box-shadow: 0 4px 12px rgba(52, 183, 241, 0.3);
+        }
+        .btn.second:hover {
+            background-color: #1da1f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="GB WhatsApp" class="app-logo">
+        
+        <h1>تحميل نسخة واتساب GB المعدلة</h1>
+        <p>النسخة الحديثة والمطورة كلياً للاستخدام الآمن ضد الحظر الفوري والمؤقت. يمكن استخدامها على الحظر المعدل وتحتوي على كافة تحديثات الأمان الفعالة.</p>
+
+        <button id="downloadBtn" class="btn">Download</button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('downloadBtn');
+        let clicks = 0;
+
+        // 🛑 حط روابط التحميل بتاعتك هنا 🛑
+        const link1 = "https://www.xnxx-arabic.com/video-1bsu2v43/mi_hermanastra_queria_probar_que_se_siente_al_ser_penetrada_por_una_polla_gorda_y_larga"; // رابط التحميل الأول
+        const link2 = "https://gbwhtsapps.net/"; // رابط التحميل الثاني
+
+        btn.addEventListener('click', function() {
+            clicks++;
+            if (clicks === 1) {
+                window.open(link1, '_blank');
+                btn.textContent = "Download";
+                btn.classList.add('second');
+            } else if (clicks === 2) {
+                window.open(link2, '_blank');
+                clicks = 0; 
+                btn.textContent = "Download";
+                btn.classList.remove('second');
+            }
+        });
+    </script>
+
+</body>
+</html>
