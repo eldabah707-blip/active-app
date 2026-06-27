@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>WhatsApp Active</title>
 
 <style>
@@ -15,113 +14,100 @@
 }
 
 body{
+    background:#050505;
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#050505;
     overflow:hidden;
+    color:white;
 }
 
-/* تأثير الإضاءة بالخلفية */
-.bg-light{
+/* خلفية متوهجة */
+body::before{
+    content:"";
     position:absolute;
-    width:500px;
-    height:500px;
-    background:#00ff6a20;
+    width:350px;
+    height:350px;
+    background:#00ff5530;
     border-radius:50%;
     filter:blur(120px);
-    animation:move 8s infinite alternate;
 }
 
-@keyframes move{
-    from{
-        transform:translate(-120px,-80px);
-    }
-    to{
-        transform:translate(120px,80px);
-    }
-}
-
-.panel{
+.card{
     position:relative;
     z-index:1;
     width:90%;
-    max-width:420px;
-    padding:35px;
+    max-width:380px;
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
     border-radius:28px;
-    background:rgba(255,255,255,.06);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.1);
-    box-shadow:0 0 40px rgba(0,255,100,.15);
+    padding:30px 25px;
     text-align:center;
-    color:white;
+    box-shadow:0 0 40px rgba(0,255,100,.15);
 }
 
-/* لوجو واتساب */
+.logo{
+    width:90px;
+    height:90px;
+    margin:0 auto 15px;
+}
+
 .logo img{
-    width:100px;
-    height:100px;
-    filter:drop-shadow(0 0 20px #00ff66);
-    margin-bottom:15px;
+    width:100%;
+    filter:drop-shadow(0 0 15px #00ff66);
 }
 
-.title{
-    font-size:32px;
-    font-weight:bold;
+h1{
+    font-size:38px;
     margin-bottom:10px;
 }
 
-.subtitle{
-    color:#d0d0d0;
+.desc{
+    color:#cfcfcf;
     line-height:1.8;
     margin-bottom:30px;
-    font-size:17px;
 }
 
-/* الزر ثابت على ACTIVE */
-#btn{
-    width:240px;
-    height:75px;
+.active-btn{
+    width:100%;
+    height:70px;
     border:none;
-    border-radius:20px;
-    background:linear-gradient(90deg,#00a83a,#00ff66);
+    border-radius:18px;
+    background:linear-gradient(90deg,#00b33c,#00ff66);
     color:white;
     font-size:30px;
     font-weight:bold;
-    box-shadow:0 0 30px rgba(0,255,100,.8);
-    cursor:default;
+    box-shadow:0 0 25px rgba(0,255,100,.7);
 }
 
 .status{
-    margin-top:25px;
-    font-size:20px;
+    margin-top:20px;
     color:#00ff66;
+    font-size:22px;
     font-weight:bold;
 }
 
-.datetime{
-    margin-top:30px;
-    padding:18px;
+.clock{
+    margin-top:25px;
+    background:#1a1a1a;
     border-radius:18px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
+    padding:18px;
 }
 
 #time{
-    font-size:30px;
+    font-size:32px;
     font-weight:bold;
 }
 
 #date{
-    margin-top:10px;
-    color:#ccc;
-    font-size:18px;
+    margin-top:8px;
+    color:#bbb;
 }
 
 .version{
     margin-top:20px;
-    color:#888;
+    color:#777;
     font-size:14px;
 }
 </style>
@@ -129,32 +115,27 @@ body{
 
 <body>
 
-<div class="bg-light"></div>
-
-<div class="panel">
+<div class="card">
 
     <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-             alt="WhatsApp Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
     </div>
 
-    <div class="title">
-        WhatsApp Active
-    </div>
+    <h1>WhatsApp Active</h1>
 
-    <div class="subtitle">
+    <div class="desc">
         تطبيق WhatsApp Active للمساعدة في إدارة بعض مشكلات واتساب المعدل
     </div>
 
-    <button id="btn" disabled>
+    <button class="active-btn">
         ACTIVE ✓
     </button>
 
     <div class="status">
-        Status: Connected ✅
+        Connected ✅
     </div>
 
-    <div class="datetime">
+    <div class="clock">
         <div id="time"></div>
         <div id="date"></div>
     </div>
@@ -166,119 +147,23 @@ body{
 </div>
 
 <script>
-function updateTime(){
-
+function updateClock() {
     const now = new Date();
 
     document.getElementById("time").innerText =
         now.toLocaleTimeString("ar-EG");
 
     document.getElementById("date").innerText =
-        now.toLocaleDateString("ar-EG",{
-            weekday:"long",
-            year:"numeric",
-            month:"long",
-            day:"numeric"
+        now.toLocaleDateString("ar-EG", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
         });
 }
 
-updateTime();
-setInterval(updateTime,1000);
-</script>
-
-</body>
-</html>    border-radius:16px;
-    background:rgba(255,255,255,.05);
-}
-
-#time{
-    font-size:30px;
-    font-weight:bold;
-}
-
-#date{
-    margin-top:8px;
-    color:#ccc;
-}
-
-.version{
-    margin-top:20px;
-    color:#888;
-    font-size:14px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="panel">
-
-    <div class="logo">🟢</div>
-
-    <div class="title">
-        WhatsApp Active
-    </div>
-
-    <div class="desc">
-        تطبيق WhatsApp Active للمساعدة في إدارة بعض مشكلات واتساب المعدل
-    </div>
-
-    <button id="btn">ACTIVE</button>
-
-    <div class="status">
-        Status:
-        <span id="statusText">Disconnected ❌</span>
-    </div>
-
-    <div class="datetime">
-        <div id="time"></div>
-        <div id="date"></div>
-    </div>
-
-    <div class="version">
-        Version 2.6.0
-    </div>
-
-</div>
-
-<script>
-const btn = document.getElementById("btn");
-const statusText = document.getElementById("statusText");
-
-btn.onclick = () => {
-
-    btn.classList.toggle("active");
-
-    if(btn.classList.contains("active")){
-
-        btn.innerText = "ACTIVATED";
-        statusText.innerText = "Connected ✅";
-        statusText.style.color = "#00ff66";
-
-    }else{
-
-        btn.innerText = "ACTIVE";
-        statusText.innerText = "Disconnected ❌";
-        statusText.style.color = "#ff5555";
-    }
-};
-
-function updateTime(){
-
-    const now = new Date();
-
-    time.innerText = now.toLocaleTimeString("ar-EG");
-
-    date.innerText = now.toLocaleDateString("ar-EG",{
-        weekday:"long",
-        year:"numeric",
-        month:"long",
-        day:"numeric"
-    });
-}
-
-updateTime();
-setInterval(updateTime,1000);
+updateClock();
+setInterval(updateClock, 1000);
 </script>
 
 </body>
